@@ -1,13 +1,15 @@
 #!/bin/bash
 
+TCLTKVERSION=8.5
+
 # Compile OOMMF
 export OOMMF_TCL_CONFIG=${PREFIX}/lib/tclConfig.sh
 export OOMMF_TK_CONFIG=${PREFIX}/lib/tkConfig.sh
 cd oommf
-tclsh oommf.tcl pimake distclean
-tclsh oommf.tcl pimake upgrade
-tclsh oommf.tcl pimake
-tclsh oommf.tcl +platform
+tclsh${TCLTKVERSION} oommf.tcl pimake distclean
+tclsh${TCLTKVERSION} oommf.tcl pimake upgrade
+tclsh${TCLTKVERSION} oommf.tcl pimake
+tclsh${TCLTKVERSION} oommf.tcl +platform
 
 # Copy all OOMMF sources and compiled files into $PREFIX/opt/
 install -d ${PREFIX}/opt/
@@ -20,7 +22,7 @@ oommf_command=$(cat <<EOF
 #! /bin/bash
 export OOMMF_TCL_CONFIG=$PREFIX/lib/tclConfig.sh
 export OOMMF_TK_CONFIG=$PREFIX/lib/tkConfig.sh
-tclsh $PREFIX/opt/oommf/oommf.tcl "\$@"
+tclsh${TCLTKVERSION} $PREFIX/opt/oommf/oommf.tcl "\$@"
 EOF
 )
 echo "$oommf_command" > ${PREFIX}/bin/oommf
