@@ -22,7 +22,7 @@ oommf_command=$(cat <<EOF
 #! /bin/bash
 export OOMMF_TCL_CONFIG=$PREFIX/lib/tclConfig.sh
 export OOMMF_TK_CONFIG=$PREFIX/lib/tkConfig.sh
-tclsh${TCLTKVERSION} $PREFIX/opt/oommf/oommf.tcl "\$@"
+$PREFIX/bin/tclsh${TCLTKVERSION} $PREFIX/opt/oommf/oommf.tcl "\$@"
 EOF
 )
 echo "$oommf_command" > ${PREFIX}/bin/oommf
