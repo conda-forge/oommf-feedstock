@@ -6,10 +6,7 @@ TCLTKVERSION=8.5
 export OOMMF_TCL_CONFIG=${PREFIX}/lib/tclConfig.sh
 export OOMMF_TK_CONFIG=${PREFIX}/lib/tkConfig.sh
 cd oommf
-tclsh${TCLTKVERSION} oommf.tcl pimake distclean
-tclsh${TCLTKVERSION} oommf.tcl pimake upgrade
-tclsh${TCLTKVERSION} oommf.tcl pimake
-tclsh${TCLTKVERSION} oommf.tcl +platform
+make build-with-dmi-extension-all
 
 # Copy all OOMMF sources and compiled files into $PREFIX/opt/.
 install -d ${PREFIX}/opt/
