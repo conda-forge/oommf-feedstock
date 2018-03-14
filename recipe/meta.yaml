@@ -1,18 +1,18 @@
 package:
   name: oommf
-  version: "1.2b0_20160930b1"  # [unix]
-  version: "1.2b0_20160930b0"  # [win]
+  version: "2.0a0_20170929a0"  # [unix]
+  version: "2.0a0_20170929a0"  # [win]
 
-# on Windows, we install from precompiled binary packages,
-# on unix, we build from source.
+# On Windows, we install from precompiled binary packages.
+# On Unix, we build from source.
 source:
-   url: https://github.com/fangohr/oommf/archive/1.2b0_20160930b1.tar.gz  # [unix]
-   url: http://math.nist.gov/oommf/dist/oommf12b0_20160930_86_x64.zip     # [win]
-   sha256: 363006f549bb63a39564fafc18b52342a14c1c3769c214467a39f72a0c0be36b  # [unix]
-   sha256: 98a0faa02dce17b6515401446e91622d29e64857d0a159ede8d5c44e1d4bca06  # [win]
+   url: https://github.com/fangohr/oommf/archive/2.0a0_20170929a0.tar.gz  # [unix]
+   url: https://math.nist.gov/oommf/dist/oommf20a0_20170929_86_x64.zip    # [win]
+   sha256: 3439d1c9e95cc7395bc2e2330bba8cf198585d1b350251ea8561c1554ff8c7fd  # [unix]
+   sha256: 71d5fdc958b7e582e90e9da8a50f9b1a8f224dc731bb8aab381484186213b54e  # [win]
 
 build:
-  number: 2
+  number: 0
   skip: True  # [win32]
 
 requirements:
@@ -44,20 +44,22 @@ about:
     operates across a wide range of Unix, Windows, and MacOSX
     platforms.
 
-    See https://github.com/fangohr/oommf/blob/master/versionlog.txt
-    for interpretation of version numbers.
+    The recipe for building OOMMF conda package was developed by
+    Thomas Kluyver, Ryan A. Pepper, Marijan Beg, and Hans Fangohr
+    at the University of Southampton and European XFEL GmbH as a part of
+    OpenDreamKit – Horizon 2020 European Research Infrastructure project (676541).
 
-    This version contains a bulk dmi extension  # [unix]
-    (https://github.com/fangohr/oommf/blob/master/oommf/app/oxs/local/BulkDMI.h)  # [unix]
-    which is not included in the OOMMF binaries and tarballs from NIST  # [unix]
-    (yet).  # [unix]
+    This conda package version contains Dzyaloshinskii-Moriya extensions,  # [unix]
+    for crystallographic classes Cnv, T(O), and D2d, which  # [unix]
+    which are not included in the OOMMF binaries and tarballs from NIST.  # [unix]
+    For details about these extensions please visit https://github.com/fangohr/oommf.git.  # [unix]
 
   doc_url: http://math.nist.gov/oommf/doc/
 
 extra:
   recipe-maintainers:
     - fangohr
-    - mb1a15
+    - marijanbeg
     - takluyver
     - davidcortesortuno
     - rpep
