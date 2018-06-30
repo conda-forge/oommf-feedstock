@@ -14,7 +14,7 @@ source:
      - mmarchive.patch  # [win]
 
 build:
-  number: 4
+  number: 5
   skip: True  # [win32]
 
 requirements:
