@@ -14,19 +14,21 @@ source:
      - mmarchive.patch  # [win]
 
 build:
-  number: 5
+  number: 6
   skip: True  # [win32]
 
 requirements:
   build:
-    - toolchain  # [unix]
-    - tk 8.5*  # [unix]
-    - tk 8.6*  # [win]
     - curl  # [win]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - tk       # [unix]
+    - tk       # [win]
     - 7za  # [win]
   run:
-    - tk 8.5*  # [unix]
-    - tk 8.6*  # [win]
+    - tk       # [unix]
+    - tk       # [win]
 
 test:  # [unix]
   commands:  # [unix]
