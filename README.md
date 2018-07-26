@@ -20,18 +20,25 @@ Thomas Kluyver, Ryan A. Pepper, Marijan Beg, and Hans Fangohr
 at the University of Southampton and European XFEL GmbH as a part of
 OpenDreamKit – Horizon 2020 European Research Infrastructure project (676541).
 
+This conda package version contains Dzyaloshinskii-Moriya extensions,
+for crystallographic classes Cnv, T(O), and D2d, which
+which are not included in the OOMMF binaries and tarballs from NIST.
+For details about these extensions please visit https://github.com/fangohr/oommf.git.
+
 
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/oommf-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/oommf-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/oommf-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/oommf-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/oommf-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/oommf-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/oommf-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/oommf-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/oommf-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/oommf-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/oommf-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/oommf-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/oommf/badges/version.svg)](https://anaconda.org/conda-forge/oommf)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/oommf/badges/downloads.svg)](https://anaconda.org/conda-forge/oommf)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-oommf-green.svg)](https://anaconda.org/conda-forge/oommf) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/oommf.svg)](https://anaconda.org/conda-forge/oommf) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/oommf.svg)](https://anaconda.org/conda-forge/oommf) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/oommf.svg)](https://anaconda.org/conda-forge/oommf) |
 
 Installing oommf
 ================
