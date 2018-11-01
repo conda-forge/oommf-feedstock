@@ -23,12 +23,12 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - {{ pin_compatible('tk', max_pin='8.5*') }}  # [unix]
-    - {{ pin_compatible('tk', max_pin='8.6*') }}  # [win]
+    - tk  # [unix]
+    - tk  # [win]
     - 7za  # [win]
   run:
-    - {{ pin_compatible('tk', max_pin='8.5*') }}  # [unix]
-    - {{ pin_compatible('tk', max_pin='8.6*') }}  # [win]
+    - tk  # [unix]
+    - tk  # [win]
 
 test:  # [unix]
   commands:  # [unix]
