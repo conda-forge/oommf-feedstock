@@ -20,7 +20,7 @@ build:
 requirements:
   build:
     - toolchain  # [unix]
-    - gcc  # [unix]
+    - gxx_linux-64  # [unix]
     - tk 8.6*  # [unix]
     - tk 8.6*  # [win]
     - curl  # [win]
