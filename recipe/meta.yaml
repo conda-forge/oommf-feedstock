@@ -14,7 +14,7 @@ source:
      - mmarchive.patch  # [win]
 
 build:
-  number: 5
+  number: 6
   skip: True  # [win32]
 
 requirements:
@@ -65,3 +65,4 @@ extra:
     - takluyver
     - davidcortesortuno
     - rpep
+    - sergii-mamedov
