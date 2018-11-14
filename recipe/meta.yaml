@@ -19,8 +19,8 @@ build:
 
 requirements:
   build:
-    - toolchain  # [unix]
-    - gxx_linux-64  # [unix]
+#    - toolchain  # [unix]
+    - {{ compiler('cxx') }}  # [unix]
     - tk 8.6*  # [unix]
     - tk 8.6*  # [win]
     - curl  # [win]
