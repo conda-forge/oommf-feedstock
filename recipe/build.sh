@@ -6,6 +6,8 @@ TCLTKVERSION=8.6
 export OOMMF_TCL_CONFIG=${SYS_PREFIX}/lib/tclConfig.sh
 export OOMMF_TK_CONFIG=${SYS_PREFIX}/lib/tkConfig.sh
 ls -la ${BUILD_PREFIX}/bin
+echo "PATH"
+echo $PATH
 make build-with-dmi-extension-all
 
 # Copy all OOMMF sources and compiled files into $PREFIX/opt/.
