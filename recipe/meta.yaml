@@ -19,7 +19,8 @@ build:
 
 requirements:
   build:
-#    - toolchain  # [unix]
+    - toolchain  # [unix]
+    - {{ compiler('c') }}
     - {{ compiler('cxx') }}  # [unix]
     - tk
     - curl  # [win]
