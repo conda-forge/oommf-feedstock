@@ -19,12 +19,13 @@ build:
 
 requirements:
   build:
-    - toolchain  # [unix]
     - {{ compiler('c') }}
-    - {{ compiler('cxx') }}  # [unix]
+    - {{ compiler('cxx') }}
     - tk
     - curl  # [win]
     - 7za  # [win]
+  host:
+    - tk
   run:
     - tk
 
