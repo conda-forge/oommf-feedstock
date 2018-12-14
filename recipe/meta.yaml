@@ -1,17 +1,16 @@
 package:
   name: oommf
-  version: "2.0a0_20170929a0"  # [unix]
-  version: "2.0a0_20170929a0"  # [win]
+  version: "2.0a1"
 
 # On Windows, we install from precompiled binary packages.
 # On Unix, we build from source.
 source:
-   url: https://github.com/fangohr/oommf/archive/2.0a0_20170929a0.tar.gz  # [unix]
-   url: https://math.nist.gov/oommf/dist/oommf20a0_20170929_86_x64.zip    # [win]
-   sha256: 3439d1c9e95cc7395bc2e2330bba8cf198585d1b350251ea8561c1554ff8c7fd  # [unix]
+   url: https://github.com/fangohr/oommf/archive/fdd83d9602059a6d7fadf57e76ac4061aef18cd8.tar.gz  # [not win]
+   url: https://math.nist.gov/oommf/dist/oommf20a1_20180930_86_x64.zip    # [win]
+   sha256: 71b810944aea228ba740d4fe283761eda0cb1b04972cd26ac17f3c3f2082cc1f  # [not win]
    sha256: 71d5fdc958b7e582e90e9da8a50f9b1a8f224dc731bb8aab381484186213b54e  # [win]
    patches:
-     - mmarchive.patch  # [win]
+     - mmarchive.patch
 
 build:
   number: 6
