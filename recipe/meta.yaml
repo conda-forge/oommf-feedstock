@@ -21,7 +21,6 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - tk
     - curl  # [win]
     - 7za  # [win]
   host:
