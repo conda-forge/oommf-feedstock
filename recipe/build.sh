@@ -22,7 +22,7 @@ fi
 #export COMPILER_NAME="${compiler_full_name[-1]}" 
 echo $COMPILER_NAME
 echo $HOST
-ln ${BUILD_PREFIX}/bin/${HOST}-${COMPILER_NAME} ${BUILD_PREFIX}/bin/${COMPILER_NAME}
+#ln ${BUILD_PREFIX}/bin/${HOST}-${COMPILER_NAME} ${BUILD_PREFIX}/bin/${COMPILER_NAME}
 
 make build-with-dmi-extension-all
 
