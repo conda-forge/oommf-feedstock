@@ -5,10 +5,21 @@ TCLTKVERSION=8.6
 # Compile OOMMF.
 export OOMMF_TCL_CONFIG=${PREFIX}/lib/tclConfig.sh
 export OOMMF_TK_CONFIG=${PREFIX}/lib/tkConfig.sh
-ln ${BUILD_PREFIX}/bin/x86_64-conda_cos6-linux-gnu-g++ ${BUILD_PREFIX}/bin/g++
 ls -la ${BUILD_PREFIX}/bin
-echo "PATH"
-echo $PATH
+
+# Check compiler.
+if [ $GXX ]
+then
+  IFS=- read -a compiler_full_name <<< $GXX
+else
+  IFS=- read -a compiler_full_name <<< $CXX
+fi
+
+export COMPILER_NAME="${compiler_full_name[-1]}" 
+echo $COMPILER_NAME
+echo $HOST
+ln ${BUILD_PREFIX}/bin/${HOST}-${COMPILER_NAME} ${BUILD_PREFIX}/bin/${COMPILER_NAME}
+
 make build-with-dmi-extension-all
 
 # Copy all OOMMF sources and compiled files into $PREFIX/opt/.
