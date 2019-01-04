@@ -5,7 +5,7 @@ TCLTKVERSION=8.6
 # Compile OOMMF.
 export OOMMF_TCL_CONFIG=${PREFIX}/lib/tclConfig.sh
 export OOMMF_TK_CONFIG=${PREFIX}/lib/tkConfig.sh
-ln ${BUILD_PREFIX}/x86_64-conda_cos6-linux-gnu-g++ ${BUILD_PREFIX}/g++
+ln ${BUILD_PREFIX}/bin/x86_64-conda_cos6-linux-gnu-g++ ${BUILD_PREFIX}/bin/g++
 ls -la ${BUILD_PREFIX}/bin
 echo "PATH"
 echo $PATH
