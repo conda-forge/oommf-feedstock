@@ -3,8 +3,8 @@
 TCLTKVERSION=8.6
 
 # Compile OOMMF.
-#export OOMMF_TCL_CONFIG=${PREFIX}/lib/tclConfig.sh
-#export OOMMF_TK_CONFIG=${PREFIX}/lib/tkConfig.sh
+export OOMMF_TCL_CONFIG=/opt/conda/lib/tclConfig.sh
+export OOMMF_TK_CONFIG=/opt/conda/lib/tkConfig.sh
 
 # Check compiler.
 if [ $GXX ]
@@ -12,9 +12,7 @@ then
   # Linux
   echo "LS -LA LIB"
   ls -la /opt/conda/lib
-  echo "LS -LA LIB2"
-  ls -la ${PREFIX}/lib
-  echo "TCL CONFIG"
+  #echo "TCL CONFIG"
   #more ${PREFIX}/lib/tclConfig.sh
   IFS=- read -a compiler_full_name <<< $GXX
   export COMPILER_NAME=g++ 
