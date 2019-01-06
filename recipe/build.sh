@@ -36,7 +36,8 @@ make build-with-dmi-extension-all
 
 # Copy all OOMMF sources and compiled files into $PREFIX/opt/.
 echo "INSTALL SOFTWARE ======"
-export PREFIX2=/opt/oommf
+ls -la /home/conda
+export PREFIX2=/home/conda
 install -d ${PREFIX2}/opt/
 install -d ${PREFIX2}/bin/
 cp -r ${SRC_DIR}/oommf ${PREFIX2}/opt/
