@@ -14,10 +14,12 @@ then
   ls -la /opt/conda/lib
   echo "LS -LA LIB2"
   ls -la ${PREFIX}/lib
+  echo "TCL CONFIG"
+  more ${PREFIX}/lib/tclConfig.sh
   IFS=- read -a compiler_full_name <<< $GXX
   export COMPILER_NAME=g++ 
   ln ${BUILD_PREFIX}/bin/${HOST}-${COMPILER_NAME} ${BUILD_PREFIX}/bin/${COMPILER_NAME}
-  ln ${BUILD_PREFIX}/bin/${HOST}-ld ${BUILD_PREFIX}/bin/${COMPILER_NAME}
+  ln ${BUILD_PREFIX}/bin/${HOST}-ld ${BUILD_PREFIX}/bin/ld
   echo "RANLIB"
   echo ${BUILD_PREFIX}/bin/${HOST}-ranlib
   mkdir -p /home/conda/feedstock_root/build_artifacts/tk_1542322308353/_build_env/bin/
