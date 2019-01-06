@@ -3,9 +3,10 @@
 TCLTKVERSION=8.6
 
 # Compile OOMMF.
-export OOMMF_TCL_CONFIG=${PREFIX}/lib/tclConfig.sh
-export OOMMF_TK_CONFIG=${PREFIX}/lib/tkConfig.sh
-ls -la ${BUILD_PREFIX}/bin
+export OOMMF_TCL_CONFIG=${SYS_PREFIX}/lib/tclConfig.sh
+export OOMMF_TK_CONFIG=${SYS_PREFIX}/lib/tkConfig.sh
+echo SYS_PREFIX
+echo ${SYS_PREFIX}
 
 # Check compiler.
 if [ $GXX ]
