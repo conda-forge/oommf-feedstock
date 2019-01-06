@@ -15,7 +15,9 @@ then
   export COMPILER_NAME=g++ 
   ln ${BUILD_PREFIX}/bin/${HOST}-${COMPILER_NAME} ${BUILD_PREFIX}/bin/${COMPILER_NAME}
   echo "RANLIB"
-  ln ${BUILD_PREFIX}/bin/${HOST}-${COMPILER_NAME} ${CONDA_BLD_PATH}/tk_1542322308353/_build_env/bin/{HOST}-ranlib
+  echo ${BUILD_PREFIX}/bin/${HOST}-ranlib
+  echo ${CONDA_BLD_PATH}/tk_1542322308353/_build_env/bin/${HOST}-ranlib
+  ln ${BUILD_PREFIX}/bin/${HOST}-ranlib ${CONDA_BLD_PATH}/tk_1542322308353/_build_env/bin/${HOST}-ranlib
   echo $COMPILER_NAME
 else
   # MacOS
