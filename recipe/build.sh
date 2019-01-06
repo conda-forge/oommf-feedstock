@@ -14,6 +14,8 @@ then
   IFS=- read -a compiler_full_name <<< $GXX
   export COMPILER_NAME=g++ 
   ln ${BUILD_PREFIX}/bin/${HOST}-${COMPILER_NAME} ${BUILD_PREFIX}/bin/${COMPILER_NAME}
+  echo "RANLIB"
+  ln ${BUILD_PREFIX}/bin/${HOST}-${COMPILER_NAME} ${CONDA_BLD_PATH}/tk_1542322308353/_build_env/bin/{HOST}-ranlib
   echo $COMPILER_NAME
 else
   # MacOS
