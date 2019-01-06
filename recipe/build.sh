@@ -3,25 +3,28 @@
 TCLTKVERSION=8.6
 
 # Compile OOMMF.
-export OOMMF_TCL_CONFIG=${SYS_PREFIX}/lib/tclConfig.sh
-export OOMMF_TK_CONFIG=${SYS_PREFIX}/lib/tkConfig.sh
-echo SYS_PREFIX
-echo ${SYS_PREFIX}
+export OOMMF_TCL_CONFIG=${PREFIX}/lib/tclConfig.sh
+export OOMMF_TK_CONFIG=${PREFIX}/lib/tkConfig.sh
 
 # Check compiler.
 if [ $GXX ]
 then
   # Linux
+  echo "LS -LA LIB"
+  ls -la /opt/conda/lib
+  echo "LS -LA LIB2"
+  ls -la ${PREFIX}/lib
   IFS=- read -a compiler_full_name <<< $GXX
   export COMPILER_NAME=g++ 
   ln ${BUILD_PREFIX}/bin/${HOST}-${COMPILER_NAME} ${BUILD_PREFIX}/bin/${COMPILER_NAME}
+  ln ${BUILD_PREFIX}/bin/${HOST}-ld ${BUILD_PREFIX}/bin/${COMPILER_NAME}
   echo "RANLIB"
   echo ${BUILD_PREFIX}/bin/${HOST}-ranlib
-  echo ${CONDA_BLD_PATH}/tk_1542322308353/_build_env/bin/${HOST}-ranlib
-  echo ${CONDA_BLD_PATH}
   mkdir -p /home/conda/feedstock_root/build_artifacts/tk_1542322308353/_build_env/bin/
   ln ${BUILD_PREFIX}/bin/${HOST}-ranlib /home/conda/feedstock_root/build_artifacts/tk_1542322308353/_build_env/bin/${HOST}-ranlib
-  echo $COMPILER_NAME
+  echo "LS -LA OOMMF"
+  ls -la oommf
+  tclsh oommf/oommf.tcl +platform
 else
   # MacOS
   IFS=- read -a compiler_full_name <<< $CXX
