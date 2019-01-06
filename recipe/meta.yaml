@@ -19,12 +19,11 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
     - tk
+    - {{ compiler('cxx') }}
+    - xorg-libx11 # [unix]
     - curl  # [win]
     - 7za  # [win]
-    - xorg-libx11
   host:
     - tk
   run:
