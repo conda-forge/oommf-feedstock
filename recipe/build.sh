@@ -11,9 +11,9 @@ if [ $GXX ]
 then
   # Linux
   echo "LS -LA LIB"
-  ls -la /opt/conda/lib
-  #echo "TCL CONFIG"
-  #more ${PREFIX}/lib/tclConfig.sh
+  #ls -la /opt/conda/lib
+  echo "TCL CONFIG"
+  more /opt/conda/lib/tclConfig.sh
   IFS=- read -a compiler_full_name <<< $GXX
   export COMPILER_NAME=g++ 
   ln ${BUILD_PREFIX}/bin/${HOST}-${COMPILER_NAME} ${BUILD_PREFIX}/bin/${COMPILER_NAME}
@@ -23,7 +23,7 @@ then
   mkdir -p /home/conda/feedstock_root/build_artifacts/tk_1542322308353/_build_env/bin/
   ln ${BUILD_PREFIX}/bin/${HOST}-ranlib /home/conda/feedstock_root/build_artifacts/tk_1542322308353/_build_env/bin/${HOST}-ranlib
   echo "LS -LA OOMMF"
-  ls -la oommf
+  #ls -la oommf
   tclsh oommf/oommf.tcl +platform
 else
   # MacOS
