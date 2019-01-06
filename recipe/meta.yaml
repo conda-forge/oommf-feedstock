@@ -21,8 +21,7 @@ requirements:
   build:
     - tk
     - {{ compiler('cxx') }}
-    #- xorg-libx11  # [unix]
-    - {{ cdt('xorg-x11-proto-devel') }}
+    - xorg-libx11  # [unix]
     - curl  # [win]
     - 7za  # [win]
   host:
