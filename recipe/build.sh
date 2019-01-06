@@ -15,7 +15,7 @@ then
   echo "LS -LA LIB2"
   ls -la ${PREFIX}/lib
   echo "TCL CONFIG"
-  more ${PREFIX}/lib/tclConfig.sh
+  #more ${PREFIX}/lib/tclConfig.sh
   IFS=- read -a compiler_full_name <<< $GXX
   export COMPILER_NAME=g++ 
   ln ${BUILD_PREFIX}/bin/${HOST}-${COMPILER_NAME} ${BUILD_PREFIX}/bin/${COMPILER_NAME}
