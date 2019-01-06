@@ -3,8 +3,8 @@
 TCLTKVERSION=8.6
 
 # Compile OOMMF.
-export OOMMF_TCL_CONFIG=${PREFIX}/lib/tclConfig.sh
-export OOMMF_TK_CONFIG=${PREFIX}/lib/tkConfig.sh
+#export OOMMF_TCL_CONFIG=${PREFIX}/lib/tclConfig.sh
+#export OOMMF_TK_CONFIG=${PREFIX}/lib/tkConfig.sh
 
 # Check compiler.
 if [ $GXX ]
@@ -34,13 +34,13 @@ else
   echo $COMPILER_NAME
 fi
 
+make build-with-dmi-extension-all
+
 #echo "COMPILER_FULL_NAME"
 #echo ${compiler_full_name}
 #export COMPILER_NAME="${compiler_full_name[-1]}" 
 
-echo $HOST
 
-make build-with-dmi-extension-all
 
 # Copy all OOMMF sources and compiled files into $PREFIX/opt/.
 #echo "INSTALL SOFTWARE ======"
