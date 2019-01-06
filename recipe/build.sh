@@ -17,7 +17,9 @@ then
   echo "RANLIB"
   echo ${BUILD_PREFIX}/bin/${HOST}-ranlib
   echo ${CONDA_BLD_PATH}/tk_1542322308353/_build_env/bin/${HOST}-ranlib
-  ln ${BUILD_PREFIX}/bin/${HOST}-ranlib ${CONDA_BLD_PATH}/tk_1542322308353/_build_env/bin/${HOST}-ranlib
+  echo ${CONDA_BLD_PATH}
+  mkdir -p /home/conda/feedstock_root/build_artifacts/tk_1542322308353/_build_env/bin/
+  ln ${BUILD_PREFIX}/bin/${HOST}-ranlib /home/conda/feedstock_root/build_artifacts/tk_1542322308353/_build_env/bin/${HOST}-ranlib
   echo $COMPILER_NAME
 else
   # MacOS
