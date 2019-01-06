@@ -34,26 +34,21 @@ fi
 
 make build-with-dmi-extension-all
 
-#echo "COMPILER_FULL_NAME"
-#echo ${compiler_full_name}
-#export COMPILER_NAME="${compiler_full_name[-1]}" 
-
-
-
 # Copy all OOMMF sources and compiled files into $PREFIX/opt/.
-#echo "INSTALL SOFTWARE ======"
-#install -d ${PREFIX}/opt/
-#install -d ${PREFIX}/bin/
-#cp -r ${SRC_DIR}/oommf ${PREFIX}/opt/
+echo "INSTALL SOFTWARE ======"
+export PREFIX2=/opt/oommf
+install -d ${PREFIX2}/opt/
+install -d ${PREFIX2}/bin/
+cp -r ${SRC_DIR}/oommf ${PREFIX2}/opt/
 
-# Create an executable called 'oommf' in ${PREFIX}/bin which
-# calls the OOMMF executable in $PREFIX/opt/.
-#oommf_command=$(cat <<EOF
-##! /bin/bash
-#export OOMMF_TCL_CONFIG=$PREFIX/lib/tclConfig.sh
-#export OOMMF_TK_CONFIG=$PREFIX/lib/tkConfig.sh
-#$PREFIX/bin/tclsh${TCLTKVERSION} $PREFIX/opt/oommf/oommf.tcl "\$@"
-#EOF
-#)
-#echo "$oommf_command" > ${PREFIX}/bin/oommf
-#chmod a+x ${PREFIX}/bin/oommf
+# Create an executable called 'oommf' in ${PREFIX2}/bin which
+# calls the OOMMF executable in $PREFIX2/opt/.
+oommf_command=$(cat <<EOF
+#! /bin/bash
+export OOMMF_TCL_CONFIG=/opt/conda/lib/tclConfig.sh
+export OOMMF_TK_CONFIG=/opt/conda/lib/tkConfig.sh
+/opt/conda/bin/tclsh${TCLTKVERSION} $PREFIX2/opt/oommf/oommf.tcl "\$@"
+EOF
+)
+echo "$oommf_command" > ${PREFIX2}/bin/oommf
+chmod a+x ${PREFIX2}/bin/oommf
