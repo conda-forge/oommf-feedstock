@@ -24,8 +24,10 @@ requirements:
     - 7za  # [win]
   host:
     - tk
+    - zlib
   run:
     - tk
+    - zlib
 
 test:  # [unix]
   commands:  # [unix]
