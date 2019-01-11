@@ -13,6 +13,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 else
   cpp_bin="g++"
   oommf_platform="linux-x86_64"
+  export LDFLAGS="$LDFLAGS -lm"
 fi
 # scrub debug-prefix-map which causes problems
 export CXXFLAGS=$(echo ${CXXFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
