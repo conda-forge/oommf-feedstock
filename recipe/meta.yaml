@@ -20,6 +20,10 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
+    - {{ cdt('libx11-devel') }}  # [linux]
+    - {{ cdt('libxau') }}  # [linux]
+    - {{ cdt('libxcb') }}  # [linux]
     - curl  # [win]
     - 7za  # [win]
   host:
