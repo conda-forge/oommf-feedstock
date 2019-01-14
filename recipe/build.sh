@@ -13,7 +13,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
 else
   cpp_bin="g++"
   oommf_platform="linux-x86_64"
-  export LDFLAGS="$LDFLAGS -lm"
+  export LDFLAGS="-lm -lz $LDFLAGS"
+  # oommf does some linking without extra_, so include them in CXXFLAGS
+  export CXXFLAGS="$CXXFLAGS $LDFLAGS"
+  export LDFLAGS="$LDFLAGS -lstdc++"
 fi
 # scrub debug-prefix-map which causes problems
 export CXXFLAGS=$(echo ${CXXFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
@@ -23,9 +26,9 @@ export OOMMF_CPP="$cpp_bin -c $CXXFLAGS"
 test -f "$BUILD_PREFIX/bin/$cpp_bin" || ln -s "$CC" "$BUILD_PREFIX/bin/$cpp_bin"
 
 # make sure LDFLAGS are respected
-sed -i -e "/# START EDIT HERE/a\\
-\$config SetValue program_linker_extra_args {$LDFLAGS}
-" oommf/config/platforms/$oommf_platform.tcl
+sed -i -e '/# START EDIT HERE/a\
+$config SetValue program_linker_extra_args $env(LDFLAGS)
+' oommf/config/platforms/$oommf_platform.tcl
 
 # fix possibly incorrect TCL_RANLIB
 if [[ ! -z "$RANLIB" ]]; then
