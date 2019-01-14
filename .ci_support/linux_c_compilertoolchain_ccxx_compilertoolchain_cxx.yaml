@@ -13,6 +13,8 @@ docker_image:
 pin_run_as_build:
   tk:
     max_pin: x.x
+  zlib:
+    max_pin: x.x
 tk:
 - '8.6'
 zip_keys:
@@ -22,3 +24,5 @@ zip_keys:
   - channel_targets
   - docker_image
   - build_number_decrement
+zlib:
+- '1.2'

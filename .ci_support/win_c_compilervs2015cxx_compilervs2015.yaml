@@ -13,8 +13,12 @@ pin_run_as_build:
     max_pin: x
   tk:
     max_pin: x.x
+  zlib:
+    max_pin: x.x
 tk:
 - '8.6'
 zip_keys:
 - - c_compiler
   - cxx_compiler
+zlib:
+- '1.2'
