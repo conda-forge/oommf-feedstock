@@ -41,6 +41,7 @@ make build-with-dmi-extension-all -j${CPU_COUNT}
 install -d ${PREFIX}/opt/
 install -d ${PREFIX}/bin/
 cp -r ${SRC_DIR}/oommf ${PREFIX}/opt/
+find ${PREFIX}/opt/oommf -name '*.o' -exec rm {} \;
 
 # Create an executable called 'oommf' in ${PREFIX}/bin which
 # calls the OOMMF executable in $PREFIX/opt/.
