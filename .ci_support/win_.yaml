@@ -1,13 +1,9 @@
-c_compiler:
-- vs2008
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 curl:
 - '7.59'
-cxx_compiler:
-- vs2008
 pin_run_as_build:
   curl:
     max_pin: x
@@ -17,8 +13,5 @@ pin_run_as_build:
     max_pin: x.x
 tk:
 - '8.6'
-zip_keys:
-- - c_compiler
-  - cxx_compiler
 zlib:
 - '1.2'
