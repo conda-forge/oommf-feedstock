@@ -5,9 +5,9 @@ package:
 # On Windows, we install from precompiled binary packages.
 # On Unix, we build from source.
 source:
-   url: https://github.com/fangohr/oommf/archive/fdd83d9602059a6d7fadf57e76ac4061aef18cd8.tar.gz  # [not win]
+   url: https://github.com/fangohr/oommf/archive/20a1_20180930.tar.gz  # [not win]
    url: https://math.nist.gov/oommf/dist/oommf20a1_20180930_86_x64.zip    # [win]
-   sha256: 71b810944aea228ba740d4fe283761eda0cb1b04972cd26ac17f3c3f2082cc1f  # [not win]
+   sha256: c871e0dbb1522c3c1314af6c084b90cdbe69fd869b55ac94443851b74f818ed2  # [not win]
    sha256: 71d5fdc958b7e582e90e9da8a50f9b1a8f224dc731bb8aab381484186213b54e  # [win]
    patches:
      - mmarchive.patch
