@@ -1,15 +1,8 @@
 --- oommf/app/mmarchive/mmarchive.tcl	2017-09-29 18:30:56.000000000 +0200
 +++ oommf/app/mmarchive/mmarchive_patched.tcl	2018-06-29 14:00:35.833226714 +0200
-@@ -144,9 +144,9 @@
-    if {![file isfile $f1] || [file executable $f1]} {
-       return 0  ;# Only move non-executable, normal files
-    }
--   if {![file owned $f1]} {
+@@ -164,4 +164,4 @@
+          }
+       }
 -      return 0  ;# Require ownership
--   }
-+   # if {![file owned $f1]} {
 +   #    return 0  ;# Require ownership
-+   # }
-    return 1
- }
- proc CheckFileAppend { filename } {
+    }
