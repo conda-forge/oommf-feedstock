@@ -1,8 +1,11 @@
---- oommf/app/mmarchive/mmarchive.tcl	2017-09-29 18:30:56.000000000 +0200
-+++ oommf/app/mmarchive/mmarchive_patched.tcl	2018-06-29 14:00:35.833226714 +0200
-@@ -164,4 +164,4 @@
+--- oommf/app/mmarchive/mmarchive.tcl	2019-01-28 16:06:22.234196790 +0100
++++ oommf/app/mmarchive/mmarchive_patched.tcl	2019-01-29 15:23:20.265508759 +0100
+@@ -163,7 +163,7 @@
+                "\nOOMMF applications should not be run as root"
           }
        }
 -      return 0  ;# Require ownership
-+   #    return 0  ;# Require ownership
++   #   return 0  ;# Require ownership
     }
+    return 1
+ }

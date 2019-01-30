@@ -11,6 +11,7 @@ source:
    sha256: f5c0caf758399b88e18b5798dc947cf0394865b2a4926f70362b5fd1c7299364  # [win]
    patches:
      - mmarchive.patch
+     - oc.patch
 
 build:
   number: 1000
@@ -34,7 +35,7 @@ requirements:
 
 test:
   commands:
-    - tclsh ${PREFIX}/opt/oommf/oommf.tcl boxsi +fg ${PREFIX}/opt/oommf/app/oxs/examples/stdprob4.mif -exitondone 1  # [unix]
+    - oommf +version  # [unix]
     - tclsh %PREFIX%\opt\oommf\oommf.tcl boxsi +fg %PREFIX%\opt\oommf\app\oxs\examples\stdprob4.mif -exitondone 1  # [win]
 
 about:
