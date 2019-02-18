@@ -30,16 +30,19 @@ sed -i -e '/# START EDIT HERE/a\
 $config SetValue program_linker_extra_args $env(LDFLAGS)
 ' oommf/config/platforms/$oommf_platform.tcl
 
-export OOMMF_TCL_RANLIB=${RUNLIB}
-echo ${OOMMF_TCL_RANLIB}
 # fix possibly incorrect TCL_RANLIB
-#if [[ ! -z "$RANLIB" ]]; then
-#    sed -i -e '/# START EDIT HERE/a\
-#$config SetValue TCL_RANLIB $env(RANLIB)
-#' oommf/config/platforms/$oommf_platform.tcl
-#fi
+if [[ ! -z "$RANLIB" ]]; then
+    sed -i -e '/# START EDIT HERE/a\
+$config SetValue TCL_RANLIB $env(RANLIB)
+' oommf/config/platforms/$oommf_platform.tcl
+fi
 
 make build-with-dmi-extension-all -j${CPU_COUNT}
+
+# remove TCL_RANLIB and program_linker_extra_args from config
+sed -i -e '/$config SetValue TCL_RANLIB $env(RANLIB)/d' oommf/config/platforms/$oommf_platform.tcl
+sed -i -e '/$config SetValue program_linker_extra_args $env(LDFLAGS)/d' oommf/config/platforms/$oommf_platform.tcl
+
 
 # Copy all OOMMF sources and compiled files into $PREFIX/opt/.
 #echo "INSTALL SOFTWARE ======"
