@@ -29,11 +29,15 @@ requirements:
   host:
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
     - {{ cdt('libx11-devel') }}  # [linux]
+    - {{ cdt('libxau') }}  # [linux]
+    - {{ cdt('libxcb') }}  # [linux]
     - tk
     - zlib
   run:
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
     - {{ cdt('libx11-devel') }}  # [linux]
+    - {{ cdt('libxau') }}  # [linux]
+    - {{ cdt('libxcb') }}  # [linux]
     - tk
     - zlib
 
