@@ -35,7 +35,7 @@ requirements:
 
 test:
   commands:
-    - oommf boxsi +fg %PREFIX%/opt/oommf/app/oxs/examples/stdprob4.mif -exitondone 1  # [unix]
+    - oommf boxsi +fg ${PREFIX}/opt/oommf/app/oxs/examples/stdprob4.mif -exitondone 1  # [unix]
     - tclsh %PREFIX%\opt\oommf\oommf.tcl boxsi +fg %PREFIX%\opt\oommf\app\oxs\examples\stdprob4.mif -exitondone 1  # [win]
 
 about:
