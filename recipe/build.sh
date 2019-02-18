@@ -30,6 +30,8 @@ sed -i -e '/# START EDIT HERE/a\
 $config SetValue program_linker_extra_args $env(LDFLAGS)
 ' oommf/config/platforms/$oommf_platform.tcl
 
+export OOMMF_TCL_RANLIB=${RUNLIB}
+echo ${OOMMF_TCL_RANLIB}
 # fix possibly incorrect TCL_RANLIB
 #if [[ ! -z "$RANLIB" ]]; then
 #    sed -i -e '/# START EDIT HERE/a\
