@@ -27,26 +27,20 @@ requirements:
     - curl  # [win]
     - 7za  # [win]
   host:
-    - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
-    - {{ cdt('libx11-devel') }}  # [linux]
-    - {{ cdt('libxau') }}  # [linux]
-    - {{ cdt('libxcb') }}  # [linux]
     - tk
     - zlib
   run:
-    - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
-    - {{ cdt('libx11-devel') }}  # [linux]
-    - {{ cdt('libxau') }}  # [linux]
-    - {{ cdt('libxcb') }}  # [linux]
     - tk
     - zlib
 
 test:
   commands:
-    - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
-    - {{ cdt('libx11-devel') }}  # [linux]
-    - {{ cdt('libxau') }}  # [linux]
-    - {{ cdt('libxcb') }}  # [linux]
+    - conda install -y libx11-common-cos6-x86_64  # [linux]
+    - conda install -y libx11-cos6-x86_64 # [linux]
+    - conda install -y libx11-devel-cos6-x86_64  # [linux]
+    - conda install -y libxau-cos6-x86_64  # [linux]
+    - conda install -y libxau-cos6-x86_64  # [linux]
+    - conda install -y xorg-x11-proto-devel-cos6-x86_64 # [linux]
     - oommf boxsi +fg ${PREFIX}/opt/oommf/app/oxs/examples/stdprob4.mif -exitondone 1  # [unix]
     - tclsh %PREFIX%\opt\oommf\oommf.tcl boxsi +fg %PREFIX%\opt\oommf\app\oxs\examples\stdprob4.mif -exitondone 1  # [win]
 
