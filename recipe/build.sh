@@ -31,11 +31,11 @@ $config SetValue program_linker_extra_args $env(LDFLAGS)
 ' oommf/config/platforms/$oommf_platform.tcl
 
 # fix possibly incorrect TCL_RANLIB
-if [[ ! -z "$RANLIB" ]]; then
-    sed -i -e '/# START EDIT HERE/a\
-$config SetValue TCL_RANLIB $env(RANLIB)
-' oommf/config/platforms/$oommf_platform.tcl
-fi
+#if [[ ! -z "$RANLIB" ]]; then
+#    sed -i -e '/# START EDIT HERE/a\
+#$config SetValue TCL_RANLIB $env(RANLIB)
+#' oommf/config/platforms/$oommf_platform.tcl
+#fi
 
 make build-with-dmi-extension-all -j${CPU_COUNT}
 
