@@ -39,6 +39,11 @@ fi
 
 make build-with-dmi-extension-all -j${CPU_COUNT}
 
+# remove TCL_RANLIB and program_linker_extra_args from config
+sed -i -e '/$config SetValue TCL_RANLIB $env(RANLIB)/d' oommf/config/platforms/$oommf_platform.tcl
+sed -i -e '/$config SetValue program_linker_extra_args $env(LDFLAGS)/d' oommf/config/platforms/$oommf_platform.tcl
+
+
 # Copy all OOMMF sources and compiled files into $PREFIX/opt/.
 #echo "INSTALL SOFTWARE ======"
 install -d ${PREFIX}/opt/
