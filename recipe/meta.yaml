@@ -33,7 +33,6 @@ requirements:
     - tk
     - zlib
     - xorg-libx11  # [linux]
-    - {{ cdt('libx11-devel') }}  # [linux]
 
 test:
   commands:
