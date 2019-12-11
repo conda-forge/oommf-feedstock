@@ -14,7 +14,7 @@ source:
      - oc.patch
 
 build:
-  number: 1002
+  number: 0
 
 requirements:
   build:
