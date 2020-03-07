@@ -21,7 +21,7 @@ at the University of Southampton and European XFEL GmbH as a part of
 OpenDreamKit – Horizon 2020 European Research Infrastructure project (676541).
 
 This conda package version contains Dzyaloshinskii-Moriya extensions,
-for crystallographic classes Cnv, T(O), and D2d, which
+for crystallographic classes Cnv, T(O), and D2d as well as the magnetoelastic effects,
 which are not included in the OOMMF binaries and tarballs from NIST.
 For details about these extensions please visit https://github.com/fangohr/oommf.git.
 
