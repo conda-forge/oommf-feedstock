@@ -43,7 +43,6 @@ make build-with-all -j${CPU_COUNT}
 sed -i -e '/$config SetValue TCL_RANLIB $env(RANLIB)/d' oommf/config/platforms/$oommf_platform.tcl
 sed -i -e '/$config SetValue program_linker_extra_args $env(LDFLAGS)/d' oommf/config/platforms/$oommf_platform.tcl
 
-
 # Copy all OOMMF sources and compiled files into $PREFIX/opt/.
 #echo "INSTALL SOFTWARE ======"
 install -d ${PREFIX}/opt/
