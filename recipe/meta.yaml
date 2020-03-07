@@ -7,7 +7,7 @@ package:
 source:
    url: https://github.com/fangohr/oommf/archive/20a1_20180930_ext.tar.gz  # [not win]
    url: https://github.com/fangohr/oommf/raw/master/precompiled/oommf20a1_20180930_86_x64.zip  # [win]
-   sha256: 8ae07f949d503ebe58891a26dd5e3f6071809e2f3e687471e0d7a24b5dd51067  # [not win]
+   sha256: 18bf9bd713c7ee6ced6d561ce742d17e0588ae24ef2e56647a5c8a7853e07a4c  # [not win]
    sha256: f5c0caf758399b88e18b5798dc947cf0394865b2a4926f70362b5fd1c7299364  # [win]
    patches:
      - mmarchive.patch
