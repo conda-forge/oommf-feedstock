@@ -3,7 +3,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 curl:
-- '7.64'
+- '7'
 pin_run_as_build:
   curl:
     max_pin: x
@@ -11,6 +11,8 @@ pin_run_as_build:
     max_pin: x.x
   zlib:
     max_pin: x.x
+target_platform:
+- win-64
 tk:
 - '8.6'
 zlib:
