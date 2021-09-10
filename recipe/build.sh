@@ -37,7 +37,7 @@ $config SetValue TCL_RANLIB $env(RANLIB)
 ' oommf/config/platforms/$oommf_platform.tcl
 fi
 
-make build-with-dmi-extension-all -j${CPU_COUNT}
+make build -j${CPU_COUNT}
 
 # remove TCL_RANLIB and program_linker_extra_args from config
 sed -i -e '/$config SetValue TCL_RANLIB $env(RANLIB)/d' oommf/config/platforms/$oommf_platform.tcl
