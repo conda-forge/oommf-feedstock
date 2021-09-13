@@ -13,7 +13,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 else
   cpp_bin="g++"
   oommf_platform="linux-x86_64"
-  export LDFLAGS="-lm -lz -D_GLIBCXX_USE_CXX11_ABI=0 $LDFLAGS"
+  export LDFLAGS="-lm -lz $LDFLAGS"
   # oommf does some linking without extra_, so include them in CXXFLAGS
   export CXXFLAGS="$CXXFLAGS $LDFLAGS"
   export LDFLAGS="$LDFLAGS -lstdc++"
