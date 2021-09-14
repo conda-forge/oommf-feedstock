@@ -14,7 +14,7 @@ source:
      - oc.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -69,7 +69,6 @@ extra:
   recipe-maintainers:
     - fangohr
     - marijanbeg
-    - takluyver
     - davidcortesortuno
     - rpep
     - sergii-mamedov
