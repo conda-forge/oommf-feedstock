@@ -15,7 +15,7 @@ else
   oommf_platform="linux-x86_64"
   export LDFLAGS="-lm -lz $LDFLAGS"
   # oommf does some linking without extra_, so include them in CXXFLAGS
-  export CXXFLAGS="$CXXFLAGS $LDFLAGS"
+  export CXXFLAGS="-std=c++11 $CXXFLAGS $LDFLAGS"
   export LDFLAGS="$LDFLAGS -lstdc++"
 fi
 # scrub debug-prefix-map which causes problems
