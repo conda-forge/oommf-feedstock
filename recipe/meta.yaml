@@ -26,6 +26,7 @@ requirements:
     - {{ cdt('libxcb') }}  # [linux]
     - curl  # [win]
     - 7za  # [win]
+    - xorg-libx11  # [linux]
   host:
     - tk
     - zlib
