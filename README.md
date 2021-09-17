@@ -174,4 +174,3 @@ Feedstock Maintainers
 * [@lang-m](https://github.com/lang-m/)
 * [@marijanbeg](https://github.com/marijanbeg/)
 * [@rpep](https://github.com/rpep/)
-
