@@ -169,6 +169,7 @@ Feedstock Maintainers
 
 * [@davidcortesortuno](https://github.com/davidcortesortuno/)
 * [@fangohr](https://github.com/fangohr/)
+* [@lang-m](https://github.com/lang-m/)
 * [@marijanbeg](https://github.com/marijanbeg/)
 * [@rpep](https://github.com/rpep/)
 * [@sergii-mamedov](https://github.com/sergii-mamedov/)
