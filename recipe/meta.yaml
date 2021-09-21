@@ -1,14 +1,14 @@
 package:
   name: oommf
-  version: "2.0a1"
+  version: "2.0a2"
 
 # On Windows, we install from precompiled binary packages.
 # On Unix, we build from source.
 source:
-   url: https://github.com/fangohr/oommf/archive/20a1_20180930.tar.gz  # [not win]
-   url: https://github.com/fangohr/oommf/raw/master/precompiled/oommf20a1_20180930_86_x64.zip  # [win]
-   sha256: c871e0dbb1522c3c1314af6c084b90cdbe69fd869b55ac94443851b74f818ed2  # [not win]
-   sha256: f5c0caf758399b88e18b5798dc947cf0394865b2a4926f70362b5fd1c7299364  # [win]
+   url: https://github.com/fangohr/oommf/archive/20a2_20200608.tar.gz  # [not win]
+   url: https://github.com/fangohr/oommf/raw/master/precompiled/oommf20a2_20200608-hotfix_86_x64.zip  # [win]
+   sha256: a3113f2aca0b6249ee99b2f4874f31de601bd7af12498d84f28706b265fa50ab  # [not win]
+   sha256: 976cc059c631173fe86acba4120aa2f161c5b1777b30f0feae5beb9fa31118c0  # [win]
    patches:
      - mmarchive.patch
      - oc.patch
@@ -26,6 +26,7 @@ requirements:
     - {{ cdt('libxcb') }}  # [linux]
     - curl  # [win]
     - 7za  # [win]
+    - xorg-libx11  # [linux]
   host:
     - tk
     - zlib
@@ -54,12 +55,14 @@ about:
     platforms.
 
     The recipe for building OOMMF conda package was developed by
-    Thomas Kluyver, Ryan A. Pepper, Marijan Beg, and Hans Fangohr
-    at the University of Southampton and European XFEL GmbH as a part of
-    OpenDreamKit – Horizon 2020 European Research Infrastructure project (676541).
+    Martin Lang, Thomas Kluyver, Ryan A. Pepper, Marijan Beg, and Hans Fangohr
+    at the University of Southampton, Max Planck Institute for the Structure and Dynamics of Matter,
+    and Imperial College London as a part of
+    OpenDreamKit – Horizon 2020 European Research Infrastructure project (676541) and
+    EPSRC Programme Grant on Skyrmionics (EP/N032128/1).
 
-    This conda package version contains Dzyaloshinskii-Moriya extensions,  # [unix]
-    for crystallographic classes Cnv, T(O), and D2d, which  # [unix]
+    This conda package version contains Dzyaloshinskii-Moriya extensions  # [unix]
+    for crystallographic classes Cnv, T(O), and D2d as well as magneto-elastic energy,  # [unix]
     which are not included in the OOMMF binaries and tarballs from NIST.  # [unix]
     For details about these extensions please visit https://github.com/fangohr/oommf.git.  # [unix]
 
@@ -71,4 +74,4 @@ extra:
     - marijanbeg
     - davidcortesortuno
     - rpep
-    - sergii-mamedov
+    - lang-m
