@@ -13,10 +13,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
 else
   cpp_bin="g++"
   oommf_platform="linux-x86_64"
-  export LDFLAGS="-lm -lz $LDFLAGS"
   # oommf does some linking without extra_, so include them in CXXFLAGS
-  export CXXFLAGS="$CXXFLAGS $LDFLAGS"
-  export LDFLAGS="$LDFLAGS -lstdc++"
+  export CXXFLAGS="-L$PREFIX/lib -lstdc++ -lz -lm $CXXFLAGS $LDFLAGS"
+  export LDFLAGS="-L$PREFIX/lib -lstdc++ -lz -lm $LDFLAGS"
 fi
 # scrub debug-prefix-map which causes problems
 export CXXFLAGS=$(echo ${CXXFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
@@ -26,6 +25,7 @@ export OOMMF_CPP="$cpp_bin -c $CXXFLAGS"
 test -f "$BUILD_PREFIX/bin/$cpp_bin" || ln -s "$CC" "$BUILD_PREFIX/bin/$cpp_bin"
 
 # make sure LDFLAGS are respected
+# does not seem to have the desired effect
 sed -i -e '/# START EDIT HERE/a\
 $config SetValue program_linker_extra_args $env(LDFLAGS)
 ' oommf/config/platforms/$oommf_platform.tcl
@@ -37,7 +37,7 @@ $config SetValue TCL_RANLIB $env(RANLIB)
 ' oommf/config/platforms/$oommf_platform.tcl
 fi
 
-make build-with-dmi-extension-all -j${CPU_COUNT}
+make build -j${CPU_COUNT}
 
 # remove TCL_RANLIB and program_linker_extra_args from config
 sed -i -e '/$config SetValue TCL_RANLIB $env(RANLIB)/d' oommf/config/platforms/$oommf_platform.tcl

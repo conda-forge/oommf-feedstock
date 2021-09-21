@@ -18,12 +18,14 @@ operates across a wide range of Unix, Windows, and MacOSX
 platforms.
 
 The recipe for building OOMMF conda package was developed by
-Thomas Kluyver, Ryan A. Pepper, Marijan Beg, and Hans Fangohr
-at the University of Southampton and European XFEL GmbH as a part of
-OpenDreamKit – Horizon 2020 European Research Infrastructure project (676541).
+Martin Lang, Thomas Kluyver, Ryan A. Pepper, Marijan Beg, and Hans Fangohr
+at the University of Southampton, Max Planck Institute for the Structure and Dynamics of Matter,
+and Imperial College London as a part of
+OpenDreamKit – Horizon 2020 European Research Infrastructure project (676541) and
+EPSRC Programme Grant on Skyrmionics (EP/N032128/1).
 
-This conda package version contains Dzyaloshinskii-Moriya extensions,
-for crystallographic classes Cnv, T(O), and D2d, which
+This conda package version contains Dzyaloshinskii-Moriya extensions
+for crystallographic classes Cnv, T(O), and D2d as well as magneto-elastic energy,
 which are not included in the OOMMF binaries and tarballs from NIST.
 For details about these extensions please visit https://github.com/fangohr/oommf.git.
 
@@ -169,7 +171,6 @@ Feedstock Maintainers
 
 * [@davidcortesortuno](https://github.com/davidcortesortuno/)
 * [@fangohr](https://github.com/fangohr/)
+* [@lang-m](https://github.com/lang-m/)
 * [@marijanbeg](https://github.com/marijanbeg/)
 * [@rpep](https://github.com/rpep/)
-* [@sergii-mamedov](https://github.com/sergii-mamedov/)
-
