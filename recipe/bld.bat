@@ -24,4 +24,7 @@ if errorlevel 1 exit 1
 
 rem Copy all OOMMF sources and compiled files into %PREFIX%\opt\.
 mkdir %PREFIX%\opt\oommf
+if errorlevel 1 exit 1
+
 xcopy %SRC_DIR%\oommf %PREFIX%\opt\oommf /e
+if errorlevel 1 exit 1
