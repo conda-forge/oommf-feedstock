@@ -35,10 +35,10 @@ rem make build -j${CPU_COUNT}
 cd %OOMMF_ROOT%
 
 dir
-tclsh %OOMMF_TCL% pimake distclean
-tclsh %OOMMF_TCL% pimake upgrade
-tclsh %OOMMF_TCL% pimake
-tclsh %OOMMF_TCL% pimake objclean
+tclsh oommf.tcl pimake distclean
+tclsh oommf.tcl pimake upgrade
+tclsh oommf.tcl pimake
+tclsh oommf.tcl pimake objclean
 dir
 
 rem # remove TCL_RANLIB and program_linker_extra_args from config
