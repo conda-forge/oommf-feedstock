@@ -2,14 +2,15 @@ cd
 dir
 dir %PREFIX%
 dir %PREFIX%\opt
+dir %PREFIX%\Library
 
-set OOMMF_TCL_CONFIG=%BUILD_PREFIX%\lib\tclConfig.sh
-set OOMMF_TK_CONFIG=%BUILD_PREFIX%\lib\tkConfig.sh
+set OOMMF_TCL_CONFIG=%BUILD_PREFIX%\Library\lib\tclConfig.sh
+set OOMMF_TK_CONFIG=%BUILD_PREFIX%\Library\lib\tkConfig.sh
 
 set OOMMF_ROOT=oommf
 set OOMMFTCL=%OOMMF_ROOT%\oommf.tcl
 
-FIND tclConfig.sh
+dir /s /b /a-d "tclConfig.sh"
 
 rem mkdir %PREFIX%\opt\oommf
 rem xcopy * %PREFIX%\opt\oommf /e
