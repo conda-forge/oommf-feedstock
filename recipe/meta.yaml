@@ -5,10 +5,8 @@ package:
 # On Windows, we install from precompiled binary packages.
 # On Unix, we build from source.
 source:
-   url: https://github.com/fangohr/oommf/archive/20a3_20210930.tar.gz  # [not win]
-   url: https://github.com/fangohr/oommf/raw/master/precompiled/oommf20a3_20210930_86_x64.zip  # [win]
-   sha256: 880242afdf4c84de7f2a3c42ab0ad8c354028a7d2d3c3160980cf3e08e285691  # [not win]
-   sha256: ec51795f3d9ed6466d31e29da8c272c0189e367a656c7881306e1a9890557ff1  # [win]
+   url: https://github.com/fangohr/oommf/archive/20a3_20210930.tar.gz
+   sha256: 880242afdf4c84de7f2a3c42ab0ad8c354028a7d2d3c3160980cf3e08e285691
    patches:
      - mmarchive.patch
      - oc.patch
@@ -18,8 +16,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}  # [not win]
-    - {{ compiler('cxx') }}  # [not win]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
     - {{ cdt('libx11-devel') }}  # [linux]
     - {{ cdt('libxau') }}  # [linux]
@@ -42,8 +40,7 @@ test:
 
 about:
   home: http://math.nist.gov/oommf/
-  license_file: oommf/LICENSE  # [unix]
-  license_file: LICENSE  # [win]
+  license_file: oommf/LICENSE
   license: Custom
   summary: 'Object Oriented MicroMagnetic Framework (OOMMF)'
 
