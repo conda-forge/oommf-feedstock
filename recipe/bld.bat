@@ -3,11 +3,11 @@ dir
 dir %PREFIX%
 dir %PREFIX%\opt
 
-set OOMMF_TCL_CONFIG=%PREFIX%/lib/tclConfig.sh
-set OOMMF_TK_CONFIG=%PREFIX%/lib/tkConfig.sh
+set OOMMF_TCL_CONFIG=%PREFIX%\lib\tclConfig.sh
+set OOMMF_TK_CONFIG=%PREFIX%\lib\tkConfig.sh
 
 set OOMMF_ROOT=oommf
-set OOMMFTCL=%OOMMF_ROOT%/oommf.tcl
+set OOMMFTCL=%OOMMF_ROOT%\oommf.tcl
 
 rem mkdir %PREFIX%\opt\oommf
 rem xcopy * %PREFIX%\opt\oommf /e
