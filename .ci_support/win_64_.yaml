@@ -9,11 +9,7 @@ cxx_compiler:
 pin_run_as_build:
   tk:
     max_pin: x.x
-  zlib:
-    max_pin: x.x
 target_platform:
 - win-64
 tk:
 - '8.6'
-zlib:
-- '1.2'
