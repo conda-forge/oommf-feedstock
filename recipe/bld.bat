@@ -3,11 +3,13 @@ dir
 dir %PREFIX%
 dir %PREFIX%\opt
 
-set OOMMF_TCL_CONFIG=%PREFIX%\lib\tclConfig.sh
-set OOMMF_TK_CONFIG=%PREFIX%\lib\tkConfig.sh
+set OOMMF_TCL_CONFIG=%BUILD_PREFIX%\lib\tclConfig.sh
+set OOMMF_TK_CONFIG=%BUILD_PREFIX%\lib\tkConfig.sh
 
 set OOMMF_ROOT=oommf
 set OOMMFTCL=%OOMMF_ROOT%\oommf.tcl
+
+FIND tclConfig.sh
 
 rem mkdir %PREFIX%\opt\oommf
 rem xcopy * %PREFIX%\opt\oommf /e
@@ -36,9 +38,13 @@ cd %OOMMF_ROOT%
 
 dir
 tclsh oommf.tcl pimake distclean
+if errorlevel 1 exit 1
 tclsh oommf.tcl pimake upgrade
+if errorlevel 1 exit 1
 tclsh oommf.tcl pimake
+if errorlevel 1 exit 1
 tclsh oommf.tcl pimake objclean
+if errorlevel 1 exit 1
 dir
 
 rem # remove TCL_RANLIB and program_linker_extra_args from config
@@ -48,4 +54,5 @@ rem sed -i -e '/$config SetValue program_linker_extra_args $env(LDFLAGS)/d' oomm
 
 rem Copy all OOMMF sources and compiled files into $PREFIX/opt/.
 xcopy %SRC_DIR%\oommf %PREFIX%\opt\ /e
+if errorlevel 1 exit 1
 dir %PREFIX%\opt\oommf
