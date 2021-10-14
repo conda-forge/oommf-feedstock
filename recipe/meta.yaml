@@ -23,10 +23,10 @@ requirements:
     #- xorg-libx11  # [linux]
   host:
     - tk
-    - zlib
+    #- zlib
   run:
     - tk
-    - zlib
+    #- zlib
     - xorg-libx11  # [linux]
 
 test:
