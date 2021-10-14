@@ -1,20 +1,20 @@
 package:
   name: oommf
-  version: "2.0a2"
+  version: "2.0a3"
 
 # On Windows, we install from precompiled binary packages.
 # On Unix, we build from source.
 source:
-   url: https://github.com/fangohr/oommf/archive/20a2_20200608.tar.gz  # [not win]
-   url: https://github.com/fangohr/oommf/raw/master/precompiled/oommf20a2_20200608-hotfix_86_x64.zip  # [win]
-   sha256: a3113f2aca0b6249ee99b2f4874f31de601bd7af12498d84f28706b265fa50ab  # [not win]
-   sha256: 976cc059c631173fe86acba4120aa2f161c5b1777b30f0feae5beb9fa31118c0  # [win]
+   url: https://github.com/fangohr/oommf/archive/20a3_20210930.tar.gz  # [not win]
+   url: https://github.com/fangohr/oommf/blob/master/precompiled/oommf20a3_20210930_86_x64.zip # [win]
+   sha256: 880242afdf4c84de7f2a3c42ab0ad8c354028a7d2d3c3160980cf3e08e285691 # [not win]
+   sha256: ec51795f3d9ed6466d31e29da8c272c0189e367a656c7881306e1a9890557ff1 # [win]
    patches:
      - mmarchive.patch
      - oc.patch
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
