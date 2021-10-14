@@ -9,25 +9,26 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/oommf-feedstock
 
 Summary: Object Oriented MicroMagnetic Framework (OOMMF)
 
+Development: https://github.com/fangohr/oommf
+
 Documentation: http://math.nist.gov/oommf/doc/
 
-The Object Oriented MicroMagnetic Framework (OOMMF) forms a
-completely functional micromagnetics package. OOMMF is written in
-C++. For portable user interfaces, it uses Tcl/Tk so that OOMMF
-operates across a wide range of Unix, Windows, and MacOSX
-platforms.
+The Object Oriented MicroMagnetic Framework (OOMMF) forms a completely
+functional micromagnetics package. OOMMF is written in C++. For portable user
+interfaces, it uses Tcl/Tk so that OOMMF operates across a wide range of Unix,
+Windows, and MacOS platforms.
 
-The recipe for building OOMMF conda package was developed by
-Martin Lang, Thomas Kluyver, Ryan A. Pepper, Marijan Beg, and Hans Fangohr
-at the University of Southampton, Max Planck Institute for the Structure and Dynamics of Matter,
-and Imperial College London as a part of
-OpenDreamKit – Horizon 2020 European Research Infrastructure project (676541) and
-EPSRC Programme Grant on Skyrmionics (EP/N032128/1).
+The recipe for building this OOMMF conda package was developed by Martin Lang,
+Thomas Kluyver, Ryan A. Pepper, Marijan Beg, and Hans Fangohr at the University
+of Southampton, Max Planck Institute for the Structure and Dynamics of Matter,
+European XFEL, and Imperial College London as a part of OpenDreamKit – Horizon
+2020 European Research Infrastructure project (676541) and EPSRC Programme Grant
+on Skyrmionics (EP/N032128/1).
 
-This conda package version contains Dzyaloshinskii-Moriya extensions
-for crystallographic classes Cnv, T(O), and D2d as well as magneto-elastic energy,
-which are not included in the OOMMF binaries and tarballs from NIST.
-For details about these extensions please visit https://github.com/fangohr/oommf.git.
+This package contains Dzyaloshinskii-Moriya extensions for Cnv, T(O), and D2d
+crystallographic classes as well as magneto-elastic energy term. These
+extensions are not included in the OOMMF binaries and tarballs provided by NIST.
+More information can be found at https://github.com/fangohr/oommf.
 
 
 Current build status
