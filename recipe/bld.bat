@@ -54,6 +54,9 @@ rem sed -i -e '/$config SetValue program_linker_extra_args $env(LDFLAGS)/d' oomm
 
 
 rem Copy all OOMMF sources and compiled files into $PREFIX/opt/.
-xcopy %SRC_DIR%\oommf %PREFIX%\opt\ /e
+mkdir %PREFIX%\opt\oommf
+if errorlevel 1 exit 1
+dir %PREFIX%\opt\oommf
+xcopy %SRC_DIR%\oommf %PREFIX%\opt\oommf /e
 if errorlevel 1 exit 1
 dir %PREFIX%\opt\oommf
