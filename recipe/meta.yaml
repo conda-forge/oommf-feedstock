@@ -20,7 +20,7 @@ requirements:
     - {{ cdt('libx11-devel') }}  # [linux]
     - {{ cdt('libxau') }}  # [linux]
     - {{ cdt('libxcb') }}  # [linux]
-    - xorg-libx11  # [linux]
+    #- xorg-libx11  # [linux]
   host:
     - tk
     - zlib
