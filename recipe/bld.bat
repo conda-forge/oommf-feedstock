@@ -1,5 +1,9 @@
-set OOMMF_TCL_CONFIG=%BUILD_PREFIX%\Library\lib\tclConfig.sh
-set OOMMF_TK_CONFIG=%BUILD_PREFIX%\Library\lib\tkConfig.sh
+cd
+dir
+dir %PREFIX%
+
+set OOMMF_TCL_CONFIG=%PREFIX%\Library\lib\tclConfig.sh
+set OOMMF_TK_CONFIG=%PREFIX%\Library\lib\tkConfig.sh
 
 set OOMMF_ROOT=%cd%\oommf
 set OOMMFTCL=%OOMMF_ROOT%\oommf.tcl
