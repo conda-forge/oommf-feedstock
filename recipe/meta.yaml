@@ -2,8 +2,6 @@ package:
   name: oommf
   version: "2.0a3"
 
-# On Windows, we install from precompiled binary packages.
-# On Unix, we build from source.
 source:
    url: https://github.com/fangohr/oommf/archive/20a3_20210930.tar.gz
    sha256: 880242afdf4c84de7f2a3c42ab0ad8c354028a7d2d3c3160980cf3e08e285691
@@ -22,8 +20,6 @@ requirements:
     - {{ cdt('libx11-devel') }}  # [linux]
     - {{ cdt('libxau') }}  # [linux]
     - {{ cdt('libxcb') }}  # [linux]
-    - curl  # [win]
-    - 7za  # [win]
     - xorg-libx11  # [linux]
   host:
     - tk
@@ -58,10 +54,10 @@ about:
     OpenDreamKit – Horizon 2020 European Research Infrastructure project (676541) and
     EPSRC Programme Grant on Skyrmionics (EP/N032128/1).
 
-    This conda package version contains Dzyaloshinskii-Moriya extensions  # [unix]
-    for crystallographic classes Cnv, T(O), and D2d as well as magneto-elastic energy,  # [unix]
-    which are not included in the OOMMF binaries and tarballs from NIST.  # [unix]
-    For details about these extensions please visit https://github.com/fangohr/oommf.git.  # [unix]
+    This conda package version contains Dzyaloshinskii-Moriya extensions
+    for crystallographic classes Cnv, T(O), and D2d as well as magneto-elastic energy,
+    which are not included in the OOMMF binaries and tarballs from NIST.
+    For details about these extensions please visit https://github.com/fangohr/oommf.git.
 
   doc_url: http://math.nist.gov/oommf/doc/
 
