@@ -23,8 +23,15 @@ tclsh %OOMMFTCL% pimake objclean
 if errorlevel 1 exit 1
 
 rem Copy all OOMMF sources and compiled files into %PREFIX%\opt\.
-mkdir %PREFIX%\opt\oommf
+mkdir %PREFIX%\Library\opt\oommf
 if errorlevel 1 exit 1
 
-xcopy %SRC_DIR%\oommf %PREFIX%\opt\oommf /e
+xcopy %SRC_DIR%\oommf %PREFIX%\Library\opt\oommf /e
 if errorlevel 1 exit 1
+
+rem Create executable
+mkdir %PREFIX%\Library\bin\
+@echo off
+echo set OOMMF_TCL_CONFIG=%PREFIX%\Library\lib\tclConfig.sh> %PREFIX%\Library\bin\oommf.bat
+echo set OOMMF_TK_CONFIG=%PREFIX%\Library\lib\tkConfig.sh>> %PREFIX%\Library\bin\oommf.bat
+echo %PREFIX%\Library\bin\tclsh %PREFIX%\Library\opt\oommf\oommf.tcl %*>> %PREFIX%\Library\bin\oommf.bat
