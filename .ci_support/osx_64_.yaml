@@ -5,7 +5,7 @@ c_compiler:
 c_compiler_version:
 - '11'
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
@@ -17,8 +17,6 @@ macos_machine:
 pin_run_as_build:
   tk:
     max_pin: x.x
-  zlib:
-    max_pin: x.x
 target_platform:
 - osx-64
 tk:
@@ -26,5 +24,3 @@ tk:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
-zlib:
-- '1.2'

@@ -1,76 +1,65 @@
 package:
   name: oommf
-  version: "2.0a2"
+  version: "2.0a3"
 
-# On Windows, we install from precompiled binary packages.
-# On Unix, we build from source.
 source:
-   url: https://github.com/fangohr/oommf/archive/20a2_20200608.tar.gz  # [not win]
-   url: https://github.com/fangohr/oommf/raw/master/precompiled/oommf20a2_20200608-hotfix_86_x64.zip  # [win]
-   sha256: a3113f2aca0b6249ee99b2f4874f31de601bd7af12498d84f28706b265fa50ab  # [not win]
-   sha256: 976cc059c631173fe86acba4120aa2f161c5b1777b30f0feae5beb9fa31118c0  # [win]
+   url: https://github.com/fangohr/oommf/archive/20a3_20210930.tar.gz
+   sha256: 880242afdf4c84de7f2a3c42ab0ad8c354028a7d2d3c3160980cf3e08e285691
    patches:
      - mmarchive.patch
      - oc.patch
 
 build:
-  number: 2
+  number: 0
 
 requirements:
   build:
-    - {{ compiler('c') }}  # [not win]
-    - {{ compiler('cxx') }}  # [not win]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
     - {{ cdt('libx11-devel') }}  # [linux]
     - {{ cdt('libxau') }}  # [linux]
     - {{ cdt('libxcb') }}  # [linux]
-    - curl  # [win]
-    - 7za  # [win]
     - xorg-libx11  # [linux]
   host:
     - tk
-    - zlib
   run:
     - tk
-    - zlib
     - xorg-libx11  # [linux]
 
 test:
   commands:
     - oommf boxsi +fg ${PREFIX}/opt/oommf/app/oxs/examples/stdprob4.mif -exitondone 1  # [unix]
-    - tclsh %PREFIX%\opt\oommf\oommf.tcl boxsi +fg %PREFIX%\opt\oommf\app\oxs\examples\stdprob4.mif -exitondone 1  # [win]
+    - oommf boxsi +fg %PREFIX%\Library\opt\oommf\app\oxs\examples\stdprob4.mif -exitondone 1  # [win]
 
 about:
   home: http://math.nist.gov/oommf/
-  license_file: oommf/LICENSE  # [unix]
-  license_file: LICENSE  # [win]
+  license_file: oommf/LICENSE
   license: Custom
   summary: 'Object Oriented MicroMagnetic Framework (OOMMF)'
-
   description: |
-    The Object Oriented MicroMagnetic Framework (OOMMF) forms a
-    completely functional micromagnetics package. OOMMF is written in
-    C++. For portable user interfaces, it uses Tcl/Tk so that OOMMF
-    operates across a wide range of Unix, Windows, and MacOSX
-    platforms.
+    The Object Oriented MicroMagnetic Framework (OOMMF) forms a completely
+    functional micromagnetics package. OOMMF is written in C++. For portable user
+    interfaces, it uses Tcl/Tk so that OOMMF operates across a wide range of Unix,
+    Windows, and MacOS platforms.
 
-    The recipe for building OOMMF conda package was developed by
-    Martin Lang, Thomas Kluyver, Ryan A. Pepper, Marijan Beg, and Hans Fangohr
-    at the University of Southampton, Max Planck Institute for the Structure and Dynamics of Matter,
-    and Imperial College London as a part of
-    OpenDreamKit – Horizon 2020 European Research Infrastructure project (676541) and
-    EPSRC Programme Grant on Skyrmionics (EP/N032128/1).
+    The recipe for building this OOMMF conda package was developed by Martin Lang,
+    Thomas Kluyver, Ryan A. Pepper, Marijan Beg, and Hans Fangohr at the University
+    of Southampton, Max Planck Institute for the Structure and Dynamics of Matter,
+    European XFEL, and Imperial College London as a part of OpenDreamKit – Horizon
+    2020 European Research Infrastructure project (676541) and EPSRC Programme Grant
+    on Skyrmionics (EP/N032128/1).
 
-    This conda package version contains Dzyaloshinskii-Moriya extensions  # [unix]
-    for crystallographic classes Cnv, T(O), and D2d as well as magneto-elastic energy,  # [unix]
-    which are not included in the OOMMF binaries and tarballs from NIST.  # [unix]
-    For details about these extensions please visit https://github.com/fangohr/oommf.git.  # [unix]
-
+    This package contains Dzyaloshinskii-Moriya extensions for Cnv, T(O), and D2d
+    crystallographic classes as well as magneto-elastic energy term. These
+    extensions are not included in the OOMMF binaries and tarballs provided by NIST.
+    More information can be found at https://github.com/fangohr/oommf.
+  dev_url: https://github.com/fangohr/oommf
   doc_url: http://math.nist.gov/oommf/doc/
 
 extra:
   recipe-maintainers:
+    - lang-m
     - fangohr
     - marijanbeg
     - davidcortesortuno
-    - lang-m
