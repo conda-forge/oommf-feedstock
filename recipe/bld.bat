@@ -32,6 +32,10 @@ if errorlevel 1 exit 1
 rem Create executable
 mkdir %PREFIX%\Library\bin\
 
-echo set OOMMF_TCL_CONFIG=%PREFIX%\Library\lib\tclConfig.sh> %PREFIX%\Library\bin\oommf.bat
-echo set OOMMF_TK_CONFIG=%PREFIX%\Library\lib\tkConfig.sh>> %PREFIX%\Library\bin\oommf.bat
-echo %PREFIX%\Library\bin\tclsh %PREFIX%\Library\opt\oommf\oommf.tcl %*>> %PREFIX%\Library\bin\oommf.bat
+(
+  echo set OOMMF_TCL_CONFIG=%PREFIX%\Library\lib\tclConfig.sh
+  echo set OOMMF_TK_CONFIG=%PREFIX%\Library\lib\tkConfig.sh
+  echo %PREFIX%\Library\bin\tclsh %PREFIX%\Library\opt\oommf\oommf.tcl %*
+) > %PREFIX%\Library\bin\oommf.bat
+
+type %PREFIX%\Library\bin\oommf.bat
