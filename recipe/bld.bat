@@ -22,7 +22,7 @@ if errorlevel 1 exit 1
 tclsh %OOMMFTCL% pimake objclean
 if errorlevel 1 exit 1
 
-rem Copy all OOMMF sources and compiled files into %PREFIX%\opt\.
+rem Copy all OOMMF sources and compiled files into %PREFIX%\Library\opt\oommf
 mkdir %PREFIX%\Library\opt\oommf
 if errorlevel 1 exit 1
 
@@ -37,5 +37,3 @@ mkdir %PREFIX%\Library\bin\
   echo set OOMMF_TK_CONFIG=%PREFIX%\Library\lib\tkConfig.sh
   echo %PREFIX%\Library\bin\tclsh %PREFIX%\Library\opt\oommf\oommf.tcl %%*
 ) > %PREFIX%\Library\bin\oommf.bat
-
-type %PREFIX%\Library\bin\oommf.bat
