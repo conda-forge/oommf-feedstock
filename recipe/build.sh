@@ -55,8 +55,8 @@ find ${PREFIX}/opt/oommf -name '*.o' -exec rm {} \;
 # calls the OOMMF executable in $PREFIX/opt/.
 cat > ${PREFIX}/bin/oommf <<EOF
 #! /bin/bash
-export OOMMF_TCL_CONFIG=$PREFIX/lib/tclConfig.sh
-export OOMMF_TK_CONFIG=$PREFIX/lib/tkConfig.sh
-$PREFIX/bin/tclsh $PREFIX/opt/oommf/oommf.tcl "\$@"
+export OOMMF_TCL_CONFIG="$PREFIX/lib/tclConfig.sh"
+export OOMMF_TK_CONFIG="$PREFIX/lib/tkConfig.sh"
+"$PREFIX/bin/tclsh" "$PREFIX/opt/oommf/oommf.tcl" "\$@"
 EOF
 chmod a+x ${PREFIX}/bin/oommf
