@@ -21,6 +21,7 @@ requirements:
     - {{ cdt('libxau') }}  # [linux]
     - {{ cdt('libxcb') }}  # [linux]
     - xorg-libx11  # [linux]
+    - make # [linux]
   host:
     - tk
   run:
