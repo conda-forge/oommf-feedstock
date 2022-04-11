@@ -14,8 +14,8 @@ else
   cpp_bin="g++"
   oommf_platform="linux-x86_64"
   # oommf does some linking without extra_, so include them in CXXFLAGS
-  export CXXFLAGS="-L$PREFIX/lib -lstdc++ -lz -lm $CXXFLAGS $LDFLAGS"
-  export LDFLAGS="-L$PREFIX/lib -lstdc++ -lz -lm $LDFLAGS"
+  export CXXFLAGS="-L$PREFIX/lib -lstdc++ -lz -lm -lrt $CXXFLAGS $LDFLAGS"
+  export LDFLAGS="-L$PREFIX/lib -lstdc++ -lz -lm -lrt $LDFLAGS"
 fi
 # scrub debug-prefix-map which causes problems
 export CXXFLAGS=$(echo ${CXXFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
