@@ -22,6 +22,7 @@ requirements:
     - {{ cdt('libxcb') }}  # [linux]
     - xorg-libx11  # [linux]
     - make # [linux]
+    - zlib # [linux]
   host:
     - tk
   run:
