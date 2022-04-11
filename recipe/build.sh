@@ -14,8 +14,8 @@ else
   cpp_bin="g++"
   oommf_platform="linux-x86_64"
   # oommf does some linking without extra_, so include them in CXXFLAGS
-  export CXXFLAGS="-L$PREFIX/lib -lstdc++ -lz -lm $CXXFLAGS $LDFLAGS"
-  export LDFLAGS="-L$PREFIX/lib -lstdc++ -lz -lm $LDFLAGS"
+  export CXXFLAGS="-L$PREFIX/lib -lstdc++ -lz -lm -lrt $CXXFLAGS $LDFLAGS"
+  export LDFLAGS="-L$PREFIX/lib -lstdc++ -lz -lm -lrt $LDFLAGS"
 fi
 # scrub debug-prefix-map which causes problems
 export CXXFLAGS=$(echo ${CXXFLAGS:-} | sed -E 's@\-fdebug\-prefix\-map[^ ]*@@g')
@@ -55,8 +55,8 @@ find ${PREFIX}/opt/oommf -name '*.o' -exec rm {} \;
 # calls the OOMMF executable in $PREFIX/opt/.
 cat > ${PREFIX}/bin/oommf <<EOF
 #! /bin/bash
-export OOMMF_TCL_CONFIG=$PREFIX/lib/tclConfig.sh
-export OOMMF_TK_CONFIG=$PREFIX/lib/tkConfig.sh
-$PREFIX/bin/tclsh $PREFIX/opt/oommf/oommf.tcl "\$@"
+export "OOMMF_TCL_CONFIG=$PREFIX/lib/tclConfig.sh"
+export "OOMMF_TK_CONFIG=$PREFIX/lib/tkConfig.sh"
+"$PREFIX/bin/tclsh" "$PREFIX/opt/oommf/oommf.tcl" "\$@"
 EOF
 chmod a+x ${PREFIX}/bin/oommf
