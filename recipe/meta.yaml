@@ -1,6 +1,6 @@
 package:
   name: oommf
-  version: "2.0b0-1"
+  version: "2.0b0.post1"
 
 source:
    url: https://github.com/fangohr/oommf/archive/20b0-1_20220930.tar.gz
