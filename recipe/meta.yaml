@@ -1,10 +1,10 @@
 package:
   name: oommf
-  version: "2.0b0.post1"
+  version: "2.1a0"
 
 source:
-   url: https://github.com/fangohr/oommf/archive/20b0-1_20220930.tar.gz
-   sha256: 96707289167f5abd88b14eb14b90b29401685caadaf737f63d476129468a4dfa
+   url: https://github.com/fangohr/oommf/archive/21a0-1_20230927.tar.gz
+   sha256: 168036701057fa5ea03d01bbd2053e2084dd06c431400b7be758bd05d4661b74
    patches:
      - mmarchive.patch
      - oc.patch
