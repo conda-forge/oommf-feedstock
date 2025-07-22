@@ -8,6 +8,7 @@ source:
    patches:
      - mmarchive.patch
      - oc.patch
+     - mesh_neighbors_h.patch
 
 build:
   number: 0
