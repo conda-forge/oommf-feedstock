@@ -10,6 +10,8 @@ export OOMMF_TK_CONFIG=${PREFIX}/lib/tkConfig.sh
 if [[ "$(uname)" == "Darwin" ]]; then
   cpp_bin="clang++"
   oommf_platform="darwin"
+  export CXXFLAGS="-isysroot $CONDA_BUILD_SYSROOT"
+  export LDFLAGS="-isysroot $CONDA_BUILD_SYSROOT"
 else
   cpp_bin="g++"
   oommf_platform="linux-x86_64"
@@ -36,6 +38,8 @@ if [[ ! -z "$RANLIB" ]]; then
 $config SetValue TCL_RANLIB $env(RANLIB)
 ' oommf/config/platforms/$oommf_platform.tcl
 fi
+
+tclsh oommf/oommf.tcl +platform
 
 make build -j${CPU_COUNT}
 
