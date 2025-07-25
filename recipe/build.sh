@@ -10,9 +10,7 @@ export OOMMF_TK_CONFIG=${PREFIX}/lib/tkConfig.sh
 if [[ "$(uname)" == "Darwin" ]]; then
   cpp_bin="clang++"
   oommf_platform="darwin"
-  sed -i.bak \
-    's/-framework UniformTypeIdentifiers/-weak_framework UniformTypeIdentifiers/g' \
-    "$PREFIX/lib/tkConfig.sh"
+  sed -i.bak 's/-framework UniformTypeIdentifiers//g'  "${PREFIX}/lib/tkConfig.sh"
 else
   cpp_bin="g++"
   oommf_platform="linux-x86_64"
