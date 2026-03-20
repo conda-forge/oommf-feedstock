@@ -3,30 +3,28 @@ package:
   version: "2.1a0"
 
 source:
-   url: https://github.com/fangohr/oommf/archive/21a0-1_20230927.tar.gz
-   sha256: 168036701057fa5ea03d01bbd2053e2084dd06c431400b7be758bd05d4661b74
-   patches:
-     - mmarchive.patch
-     - oc.patch
-     - mesh_neighbors_h.patch
+  url: https://github.com/fangohr/oommf/archive/21a0-1_20230927.tar.gz
+  sha256: 168036701057fa5ea03d01bbd2053e2084dd06c431400b7be758bd05d4661b74
+  patches:
+    - mmarchive.patch
+    - oc.patch
+    - mesh_neighbors_h.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
-    - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
-    - {{ cdt('libx11-devel') }}  # [linux]
-    - {{ cdt('libxau') }}  # [linux]
-    - {{ cdt('libxcb') }}  # [linux]
     - xorg-libx11  # [linux]
     - make  # [linux]
     - zlib  # [linux]
   host:
     - tk
+    - xorg-xorgproto                     # [linux]
+    - xorg-libx11                # [linux]
   run:
     - tk
     - xorg-libx11  # [linux]
